@@ -1,0 +1,21 @@
+spring:
+  application:
+    # 会自动根据服务名拉取dataid对应的配置文件，如果dataid跟服务名不一致，就需要手动指定dataid
+    # 也就是默认的配置文件为order.yml
+    name: stock
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 110.42.244.186:8848
+        group: alibaba
+        username: nacos
+        password: nacos
+      config:
+        # 默认properties文件拓展名
+        file-extension: yml
+        server-addr: 110.42.244.186:8848
+        # 如果服务端开启了权限，此处必须配置，否则可以省略
+        username: nacos
+        password: nacos
+        # 客户端将无法感知配置的变化
+        # refresh-enabled: false
